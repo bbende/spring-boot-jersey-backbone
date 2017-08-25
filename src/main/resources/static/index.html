@@ -1,0 +1,67 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+    <link rel='stylesheet' media='screen' href='webjars/bootstrap/css/bootstrap.min.css'>
+    <script type='text/javascript' src='webjars/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='webjars/underscorejs/underscore-min.js'></script>
+    <script type='text/javascript' src='webjars/backbonejs/backbone-min.js'></script>
+</head>
+<body>
+
+<div id="body" class="container">
+    <h2>Notes</h2>
+    <div id="app">
+
+    </div>
+</div>
+
+<script type="text/template" id="note-template">
+    <div class="row">
+        <div class="col-md-8">
+            <hr/>
+            <p><b><%= id%>)</b> <%= text %></p>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/template" id="note-list-template">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="sr-only" for="note-text">Note Text</label>
+                    <input id="note-text" class="form-control" value="">
+                </div>
+                <div class="col-md-2">
+                    <button id="create-note" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type='text/javascript' src='js/notes.js'></script>
+<script type='text/javascript' src='js/router.js'></script>
+<script type='text/javascript' src='js/app.js'></script>
+
+</body>
+</html>
