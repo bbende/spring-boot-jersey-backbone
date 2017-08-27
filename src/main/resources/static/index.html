@@ -37,10 +37,35 @@ limitations under the License.
     <div class="row">
         <div class="col-md-8">
             <hr/>
-            <p><b><%= id%>)</b> <%= text %></p>
+            <p>
+                <% if (editing == "false") { %>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <%= text %>
+                        </div>
+                        <div class="col-md-2">
+                          <button id="edit-note" class="btn btn-default btn-sm">Edit</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button id="delete-note" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id="edit-note-text" class="form-control" value="<%= text %>" />
+                        </div>
+                        <div class="col-md-2">
+                            <button id="save-edit-note" class="btn btn-default btn-sm">Save</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button id="cancel-edit-note" class="btn btn-danger btn-sm">Cancel</button>
+                        </div>
+                    </div>
+                <% } %>
+            </p>
         </div>
     </div>
-
 </script>
 
 <script type="text/template" id="note-list-template">
